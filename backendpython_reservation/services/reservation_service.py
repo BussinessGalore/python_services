@@ -155,18 +155,14 @@ class ReservationService:
         return customer_reservations
     def create_reservation(self, reservation_dto: CreateReservationDTO) -> ReservationDAO:
         """Crea una reserva después de validaciones en cadena."""
-        
-        # Crear la cadena de validaciones
+
         date_handler = DateHandler(next_handler=EmployeeHandler())
         
-        # Ejecutar la validación en cadena
         date_handler.validate(reservation_dto, self)
 
-        # Obtener ID único
         existing_reservations = self.repository.get_all_reservations()
         new_id = max([res.id_reservation for res in existing_reservations], default=0) + 1
 
-        # Crear reserva
         new_reservation = ReservationDAO(
             id_reservation=new_id,
             id_employee=reservation_dto.id_employee,
