@@ -37,7 +37,7 @@ class ReservationRepository:
         """Guarda la reserva en el archivo JSON."""
         self.data.append(
             reservation.model_dump()
-        )  # Usar model_dump() en lugar de dict()
+        ) 
         self._save_data()
 
     def get_all_reservations(self) -> List[ReservationDAO]:
@@ -51,7 +51,7 @@ class ReservationRepository:
                 id_service=reservation["id_service"],
                 id_store=reservation["id_store"],
                 reservationDate=reservation["reservationDate"],
-                status=reservation["status"],
+                status= "sheduled"
             )
             reservations.append(reservation_temp)
         return reservations

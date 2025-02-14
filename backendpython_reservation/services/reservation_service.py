@@ -7,16 +7,17 @@ Author: Julian David Celis Giraldo <celisjuliandavid@gmail.com>
 from datetime import datetime
 from typing import List
 from handlers.date_handler import DateHandler  # pylint: disable=import-error
+from handlers.employee_handler import EmployeeHandler # pylint: disable=import-error
 from repositories.reservation_repository import ReservationRepository, ReservationDAO # pylint: disable=import-error
 from data_object.customer_store_dto import CustomerStoreDTO # pylint: disable=import-error
-
+from data_object.cr_res_dto import CreateReservationDTO # pylint: disable=import-error
 
 class ReservationService:
     """This class provides services for reservations."""
 
     def __init__(self):
         self.repository = ReservationRepository()
-        self.date_handler = DateHandler()  # Instantiated later
+        self.handler = DateHandler(next_handler=EmployeeHandler()) # Cadena de responsabilidad para validaciones
 
     def get_all(self) -> List[ReservationDAO]:
         """Returns all reservations."""
@@ -144,7 +145,6 @@ class ReservationService:
         Returns:
             List[ReservationDAO]: A list of reservations for the customer in the store.
         """
-
         all_reservations = self.repository.get_all_reservations()
 
         customer_reservations = [
@@ -153,3 +153,31 @@ class ReservationService:
         ]
 
         return customer_reservations
+    def create_reservation(self, reservation_dto: CreateReservationDTO) -> ReservationDAO:
+        """Crea una reserva después de validaciones en cadena."""
+        
+        # Crear la cadena de validaciones
+        date_handler = DateHandler(next_handler=EmployeeHandler())
+        
+        # Ejecutar la validación en cadena
+        date_handler.validate(reservation_dto, self)
+
+        # Obtener ID único
+        existing_reservations = self.repository.get_all_reservations()
+        new_id = max([res.id_reservation for res in existing_reservations], default=0) + 1
+
+        # Crear reserva
+        new_reservation = ReservationDAO(
+            id_reservation=new_id,
+            id_employee=reservation_dto.id_employee,
+            id_customer=reservation_dto.id_customer,
+            id_service=reservation_dto.id_service,
+            id_store=reservation_dto.id_store,
+            reservationDate=reservation_dto.reservationDate,
+            status="scheduled"
+        )
+
+        # Guardar reserva
+        self.repository.add_reservation(new_reservation)
+
+        return new_reservation

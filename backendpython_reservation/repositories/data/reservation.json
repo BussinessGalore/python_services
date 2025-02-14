@@ -115,5 +115,14 @@
         "id_store": 1,
         "reservationDate": "2025-02-13 20:00:00",
         "status": "scheduled"
+    },
+    {
+        "id_reservation": 14,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-14 06:00:00+00:00",
+        "status": "scheduled"
     }
 ]
