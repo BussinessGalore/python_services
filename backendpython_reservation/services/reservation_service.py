@@ -154,7 +154,7 @@ class ReservationService:
 
         return customer_reservations
     def create_reservation(self, reservation_dto: CreateReservationDTO) -> ReservationDAO:
-        """Crea una reserva después de validaciones en cadena."""
+        """Creates a reservation after chain validations."""
 
         date_handler = DateHandler(next_handler=EmployeeHandler())
         
