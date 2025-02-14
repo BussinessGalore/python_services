@@ -1,0 +1,119 @@
+[
+    {
+        "id_reservation": 1,
+        "id_employee": 1,
+        "id_customer": 1,
+        "id_service": 1,
+        "id_store": 1,
+        "reservationDate": "2025-02-12T10:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 2,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 2,
+        "id_store": 1,
+        "reservationDate": "2025-02-12T11:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 3,
+        "id_employee": 1,
+        "id_customer": 3,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-12T12:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 4,
+        "id_employee": 1,
+        "id_customer": 4,
+        "id_service": 4,
+        "id_store": 1,
+        "reservationDate": "2025-02-12T13:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 5,
+        "id_employee": 1,
+        "id_customer": 5,
+        "id_service": 5,
+        "id_store": 1,
+        "reservationDate": "2025-02-12T14:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 6,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-15 12:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 7,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 13:00:00",
+        "status": "scheluded"
+    },
+    {
+        "id_reservation": 8,
+        "id_employee": 1,
+        "id_customer": 1,
+        "id_service": 1,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 14:00:00",
+        "status": "scheduled"
+    },
+    {
+        "id_reservation": 9,
+        "id_employee": 1,
+        "id_customer": 1,
+        "id_service": 1,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 15:00:00",
+        "status": "scheduled"
+    },
+    {
+        "id_reservation": 10,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 16:00:00",
+        "status": "scheduled"
+    },
+    {
+        "id_reservation": 11,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 17:00:00",
+        "status": "scheduled"
+    },
+    {
+        "id_reservation": 12,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 18:00:00",
+        "status": "scheduled"
+    },
+    {
+        "id_reservation": 13,
+        "id_employee": 1,
+        "id_customer": 2,
+        "id_service": 3,
+        "id_store": 1,
+        "reservationDate": "2025-02-13 20:00:00",
+        "status": "scheduled"
+    }
+]
