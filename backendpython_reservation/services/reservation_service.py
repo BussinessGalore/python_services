@@ -17,7 +17,7 @@ class ReservationService:
 
     def __init__(self):
         self.repository = ReservationRepository()
-        self.handler = DateHandler(next_handler=EmployeeHandler()) # Cadena de responsabilidad para validaciones
+        self.handler = DateHandler(next_handler=EmployeeHandler())
 
     def get_all(self) -> List[ReservationDAO]:
         """Returns all reservations."""
@@ -157,7 +157,7 @@ class ReservationService:
         """Creates a reservation after chain validations."""
 
         date_handler = DateHandler(next_handler=EmployeeHandler())
-        
+
         date_handler.validate(reservation_dto, self)
 
         existing_reservations = self.repository.get_all_reservations()

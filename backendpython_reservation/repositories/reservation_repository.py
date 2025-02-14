@@ -37,7 +37,7 @@ class ReservationRepository:
         """Guarda la reserva en el archivo JSON."""
         self.data.append(
             reservation.model_dump()
-        ) 
+        )
         self._save_data()
 
     def get_all_reservations(self) -> List[ReservationDAO]:
